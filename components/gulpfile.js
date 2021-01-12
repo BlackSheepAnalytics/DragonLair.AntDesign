@@ -14,7 +14,8 @@ gulp.task('less', function () {
     .src('ant-design-blazor.less')
     .pipe(less({ javascriptEnabled: true }))
     .pipe(cleanCss({ compatibility: 'ie8' }))
-    .pipe(gulp.dest('wwwroot/css'));
+    .pipe(gulp.dest('wwwroot/css'))
+    .pipe(gulp.dest('../../output/css/antdesign'));
 });
 
 gulp.task('ts', function () {
@@ -36,7 +37,8 @@ gulp.task('ts', function () {
     .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(uglify())
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('wwwroot/js'));
+    .pipe(gulp.dest('wwwroot/js'))
+    .pipe(gulp.dest('../../output/js/antdesign'));
 });
 
 gulp.task('src', function () {
